@@ -1,0 +1,26 @@
+type Commande {
+    id: Int
+    produitId: Int
+    quantity: Int
+}
+
+input CommandeInput {
+    produitId: Int
+    quantity: Int
+}
+
+type Produit {
+    id: Int
+    name: String
+    stock: Int
+    price: Float
+}
+
+type Query {
+    getCommandes: [Commande]
+    getProduitById(produitId: Int): Produit
+}
+
+type Mutation {
+    createCommande(input: CommandeInput): Commande
+}
