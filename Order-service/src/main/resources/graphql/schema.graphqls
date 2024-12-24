@@ -1,15 +1,15 @@
-type Commande {
+type Order {
     id: Int
-    produitId: Int
+    productId: Int
     quantity: Int
 }
 
-input CommandeInput {
-    produitId: Int
+input OrderInput {
+    productId: Int
     quantity: Int
 }
 
-type Produit {
+type Product {
     id: Int
     name: String
     stock: Int
@@ -17,10 +17,10 @@ type Produit {
 }
 
 type Query {
-    getCommandes: [Commande]
-    getProduitById(produitId: Int): Produit
+    getOrders: [Order]
+    getProductById(productId: Int): Product
 }
 
 type Mutation {
-    createCommande(input: CommandeInput): Commande
+    createOrder(input: OrderInput): Order
 }
